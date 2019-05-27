@@ -4,7 +4,7 @@
          "PPG",
          "ABP"
       ],
-      "filename": "/tmp/data1.mat",
+      "filename": "/content/gdrive/My Drive/data/ppg_apg_Queensland/Part_1.mat",
       "normalise": true,
       "sequence_length": 50,
       "train_test_split": 0.85
@@ -47,7 +47,7 @@
          "acc"
       ],
       "optimizer": "adam",
-      "save_dir": "/tmp"
+      "save_dir": "/content/gdrive/My Drive/data/"
    },
    "training": {
       "batch_size": 32,
