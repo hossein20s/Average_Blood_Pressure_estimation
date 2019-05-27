@@ -13,7 +13,7 @@
       "layers": [
          {
             "input_dim": 1,
-            "input_timesteps": 50,
+            "input_timesteps": 49,
             "neurons": 100,
             "return_seq": true,
             "type": "lstm"
