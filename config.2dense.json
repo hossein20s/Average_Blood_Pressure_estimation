@@ -1,0 +1,46 @@
+{
+   "data": {
+      "columns": [
+         "PPG",
+         "ABP"
+      ],
+      "filename": "/tmp/data1.mat",
+      "normalise": true,
+      "sequence_length": 50,
+      "train_test_split": 0.85
+   },
+   "model": {
+      "layers": [
+         {
+            "activation": "relu",
+            "input_shape": [
+               1
+            ],
+            "neurons": 64,
+            "type": "dense"
+         },
+         {
+            "activation": "relu",
+            "neurons": 64,
+            "type": "dense"
+         },
+         {
+            "activation": "linear",
+            "neurons": 1,
+            "type": "dense"
+         }
+      ],
+      "loss": "mse",
+      "metrics": [
+         "acc",
+         "mean_absolute_error",
+         "mean_squared_error"
+      ],
+      "optimizer": "RMSProp",
+      "save_dir": "/tmp"
+   },
+   "training": {
+      "batch_size": 32,
+      "epochs": 200
+   }
+}
