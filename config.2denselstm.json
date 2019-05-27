@@ -49,8 +49,7 @@
       ],
       "loss": "mse",
       "metrics": [
-         "mean_absolute_error",
-         "mean_squared_error"
+         "acc"
       ],
       "optimizer": "adam",
       "save_dir": "/content/gdrive/My Drive/data/"
