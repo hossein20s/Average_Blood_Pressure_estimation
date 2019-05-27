@@ -1,0 +1,39 @@
+{
+    "data": {
+        "filename": "/tmp/data1.mat",
+        "columns": [
+            "PPG",
+            "ABP"
+        ],
+        "sequence_length": 50,
+        "train_test_split": 0.85,
+        "normalise": true
+    },
+    "training": {
+        "epochs": 1,
+        "batch_size": 32
+    },
+    "model": {
+        "loss": "mse",
+        "optimizer": "adam",
+        "metrics": [
+            "acc"
+            ],
+        "save_dir": "/tmp",
+        "layers": [
+            {
+                "type": "lstm",
+                "neurons": 150,
+                "input_timesteps": 50,
+                "input_dim": 1,
+                "return_seq": true
+            },
+            {
+                "type": "attention_decoder",
+                "neurons": 150,
+                "input_dim": 1
+            }
+        ]
+    }
+}
+
