@@ -1,39 +1,38 @@
 {
-    "data": {
-        "filename": "/tmp/data1.mat",
-        "columns": [
-            "PPG",
-            "ABP"
-        ],
-        "sequence_length": 50,
-        "train_test_split": 0.85,
-        "normalise": true
-    },
-    "training": {
-        "epochs": 1,
-        "batch_size": 32
-    },
-    "model": {
-        "loss": "mse",
-        "optimizer": "adam",
-        "metrics": [
-            "acc"
-            ],
-        "save_dir": "/tmp",
-        "layers": [
-            {
-                "type": "lstm",
-                "neurons": 150,
-                "input_timesteps": 50,
-                "input_dim": 1,
-                "return_seq": true
-            },
-            {
-                "type": "attention_decoder",
-                "neurons": 150,
-                "input_dim": 1
-            }
-        ]
-    }
+   "data": {
+      "columns": [
+         "PPG",
+         "ABP"
+      ],
+      "filename": "/content/gdrive/My Drive/data/ppg_apg_Queensland/Part_1.mat",
+      "normalise": true,
+      "sequence_length": 50,
+      "train_test_split": 0.85
+   },
+   "model": {
+      "layers": [
+         {
+            "input_dim": 1,
+            "input_timesteps": 50,
+            "neurons": 50,
+            "return_seq": true,
+            "type": "lstm"
+         },
+         {
+            "input_dim": 2,
+            "neurons": 50,
+            "type": "attention"
+         }
+      ],
+      "loss": "mse",
+      "metrics": [
+         "acc"
+      ],
+      "optimizer": "adam",
+      "save_dir": "/content/gdrive/My Drive/data/"
+   },
+   "training": {
+      "batch_size": 32,
+      "epochs": 1000
+   }
 }
-
