@@ -5,6 +5,7 @@
          "ABP"
       ],
       "filename": "/content/gdrive/My Drive/data/ppg_apg_Queensland/Part_1.mat",
+      "n_features": 50,
       "normalise": true,
       "sequence_length": 50,
       "train_test_split": 0.85
@@ -13,8 +14,8 @@
       "layers": [
          {
             "input_dim": 2,
-            "input_timesteps": 49,
-            "neurons": 150,
+            "input_timesteps": 50,
+            "neurons": 50,
             "return_seq": true,
             "type": "lstm"
          },
@@ -23,7 +24,7 @@
             "type": "dropout"
          },
          {
-            "neurons": 150,
+            "neurons": 50,
             "return_seq": true,
             "type": "lstm"
          },
@@ -38,7 +39,7 @@
          },
          {
             "activation": "relu",
-            "neurons": 64,
+            "neurons": 50,
             "type": "dense"
          },
          {
@@ -49,13 +50,17 @@
       ],
       "loss": "mse",
       "metrics": [
-         "acc"
+         "acc",
+         "mse",
+         "mae",
+         "mape",
+         "cosine"
       ],
       "optimizer": "adam",
       "save_dir": "/content/gdrive/My Drive/data/"
    },
    "training": {
-      "batch_size": 32,
-      "epochs": 2
+      "batch_size": 50,
+      "epochs": 100
    }
 }
