@@ -1,0 +1,64 @@
+{
+   "data": {
+      "columns": [
+         "Pleth",
+         "ECG"
+      ],
+      "filename": "/content/gdrive/My Drive/data/case1_ppg_ecg.csv",
+      "n_features": 1,
+      "normalise": true,
+      "sequence_length": 100,
+      "train_test_split": 0.85
+   },
+   "model": {
+      "layers": [
+         {
+            "input_dim": 1,
+            "input_timesteps": 100,
+            "neurons": 100,
+            "return_seq": true,
+            "type": "lstm"
+         },
+         {
+            "rate": 0.2,
+            "type": "dropout"
+         },
+         {
+            "neurons": 100,
+            "return_seq": true,
+            "type": "lstm"
+         },
+         {
+            "rate": 0.2,
+            "type": "dropout"
+         },
+         {
+            "activation": "relu",
+            "neurons": 64,
+            "type": "dense"
+         },
+         {
+            "activation": "relu",
+            "neurons": 64,
+            "type": "dense"
+         },
+         {
+            "activation": "linear",
+            "neurons": 1,
+            "type": "dense"
+         }
+      ],
+      "loss": "mse",
+      "metrics": [
+         "acc",
+         "mae",
+         "mse"
+      ],
+      "optimizer": "adam",
+      "save_dir": "/content/gdrive/My Drive/models/model_ppg_ecg"
+   },
+   "training": {
+      "batch_size": 100,
+      "epochs": 1
+   }
+}

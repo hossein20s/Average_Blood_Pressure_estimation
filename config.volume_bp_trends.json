@@ -1,0 +1,55 @@
+{
+   "data": {
+      "columns": [
+         "RelativeTimeMilliseconds, NBP (Mean), Minute Volume"
+      ],
+      "filename": "case1_trends_3column.csv",
+      "n_features": 1,
+      "normalise": true,
+      "sequence_length": 64,
+      "train_test_split": 0.85
+   },
+   "model": {
+      "layers": [
+         {
+            "filters": 10,
+            "input_dim": 1,
+            "input_timesteps": 80,
+            "kernel_size": 20,
+            "strides": 5,
+            "type": "conv1D"
+         },
+         {
+            "filter": 20,
+            "kernel_size": 5,
+            "type": "conv1D"
+         },
+         {
+            "filter": 40,
+            "kernel_size": 5,
+            "type": "conv1D"
+         },
+         {
+            "type": "flatten"
+         },
+         {
+            "activation": "linear",
+            "neurons": 1,
+            "type": "dense"
+         }
+      ],
+      "loss": "mse",
+      "metrics": [
+         "mse",
+         "acc"
+      ],
+      "optimizer": "adam",
+      "save_dir": "/tmp"
+   },
+   "training": {
+      "batch_size": 64,
+      "epochs": 500,
+      "feature_size": 80,
+      "validation_split": 0.35
+   }
+}
