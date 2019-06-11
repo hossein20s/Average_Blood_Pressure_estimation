@@ -20,12 +20,12 @@
             "type": "conv1D"
          },
          {
-            "filter": 20,
+            "filters": 20,
             "kernel_size": 5,
             "type": "conv1D"
          },
          {
-            "filter": 40,
+            "filters": 40,
             "kernel_size": 5,
             "type": "conv1D"
          },
